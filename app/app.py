@@ -6,6 +6,7 @@ import random
 from discord.ui import View, Button
 import os
 from dotenv import load_dotenv 
+from keep_alive import keep_alive 
 
 load_dotenv()
 # Botのトークンを設定
@@ -691,6 +692,8 @@ def reset_game():
     seer_action_done = False
     wolf_action_done = False
     cancel_votes = {}  # 中断票もリセット
+
+keep_alive()
 
 # Botの実行開始
 bot.run(TOKEN)
